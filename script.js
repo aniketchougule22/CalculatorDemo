@@ -14,6 +14,13 @@ try
                 string = "";
                 document.querySelector('input').value = string
             } 
+            else if(e.target.innerHTML == 'C') 
+            {
+                let val = document.querySelector('.input').value;
+                document.querySelector('.input').value = val.slice(0, -1);
+                // removeVar.remove();
+                string = document.querySelector('.input').value
+            } 
             else if(e.target.innerHTML == '') 
             {
                 string = "";
