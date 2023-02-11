@@ -1,13 +1,21 @@
 try 
 {
+
     let string = "";
     let buttons = document.querySelectorAll('.button');
     Array.from(buttons).forEach((button) => {
         button.addEventListener('click', (e) => {
+
             if (e.target.innerHTML == '=') 
             {
-                string = eval(string)
-                document.querySelector('input').value = string
+                let get = document.querySelector('.input').value;
+                if (get == '') {
+                    document.querySelector('input').value = '';
+                } else {
+                    string = eval(string)
+                    document.querySelector('input').value = string
+                }
+                
             } 
             else if(e.target.innerHTML == 'AC') 
             {
@@ -18,7 +26,6 @@ try
             {
                 let val = document.querySelector('.input').value;
                 document.querySelector('.input').value = val.slice(0, -1);
-                // removeVar.remove();
                 string = document.querySelector('.input').value
             } 
             else if(e.target.innerHTML == '') 
